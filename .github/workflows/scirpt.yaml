@@ -1,0 +1,22 @@
+name: CI/CD with Bash Script
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Run Bash Script
+      run: |
+        chmod +x ./test.sh
+        ./test.sh /scripting "error"
