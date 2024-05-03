@@ -20,5 +20,6 @@ jobs:
 
     - name: Execute Bash script
       run: |
+        pwd
         bash test.sh /scripting "error"
 
