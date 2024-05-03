@@ -17,5 +17,6 @@ jobs:
         run: |
           chmod +x test.sh
           ./test.sh ${{ github.workspace }}/scripting "error" > matching_lines.txt
+          cat matching_lines.txt
 
 
