@@ -19,4 +19,5 @@ jobs:
     - name: Run Bash Script
       run: |
         chmod +x ./test.sh
+        pwd
         ./test.sh /scripting "error"
