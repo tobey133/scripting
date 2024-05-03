@@ -1,4 +1,4 @@
-name: Bash Script CI/CD
+name: Find Matching Lines
 
 on:
   push:
@@ -6,20 +6,16 @@ on:
       - main
 
 jobs:
-  build:
+  find_matching_lines:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Run script to find matching lines
+        run: |
+          chmod +x test.sh
+          ./test.sh ${{ github.workspace }}/scripting "error" > matching_lines.txt
 
-    - name: Set up Bash
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y bash
-
-    - name: Execute Bash script
-      run: |
-        pwd
-        bash test.sh / "error"
 
